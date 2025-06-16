@@ -51,13 +51,9 @@ SQL 是在关系数据库上执行查询、数据操作和数据定义的标准�
 
 用于定义和管理数据库对象（如表、索引）。
 
-- 创建表 `CREATE TABLE`
+- 创建表 `CREATE TABLE`:
 
-  :
-
-  SQL
-
-  ```
+  ```mysql
   CREATE TABLE Students (
       SID CHAR(9) PRIMARY KEY,
       SName VARCHAR(20) NOT NULL,
@@ -66,25 +62,17 @@ SQL 是在关系数据库上执行查询、数据操作和数据定义的标准�
       CONSTRAINT age_check CHECK (Age >= 18)
   );
   ```
+  
+- 修改表 `ALTER TABLE`:
 
-- 修改表 `ALTER TABLE`
-
-  :
-
-  SQL
-
-  ```
+  ```mysql
   ALTER TABLE Students ADD COLUMN Gender CHAR(1); -- 添加列
   ALTER TABLE Students DROP COLUMN Age; -- 删除列
   ```
+  
+- 删除表 `DROP TABLE`:
 
-- 删除表 `DROP TABLE`
-
-  :
-
-  SQL
-
-  ```
+  ```mysql
   DROP TABLE Students;
   ```
 
@@ -92,82 +80,36 @@ SQL 是在关系数据库上执行查询、数据操作和数据定义的标准�
 
 用于从表中检索数据。
 
-- 基本查询 `SELECT`
+- 基本查询 `SELECT`:
 
-  :
-
-  SQL
-
-  ```
+  ```mysql
   SELECT SName, Major
   FROM Students
   WHERE Age > 20 AND Major = '计算机科学'
   ORDER BY SName DESC;
   ```
+  
+- 聚合函数:  `COUNT()` ,  `SUM()` ,  `AVG()` ,  `MAX()`,  `MIN()`
 
-- 聚合函数
-
-  : 
-
-  ```
-  COUNT()
-  ```
-
-  , 
-
-  ```
-  SUM()
-  ```
-
-  , 
-
-  ```
-  AVG()
-  ```
-
-  , 
-
-  ```
-  MAX()
-  ```
-
-  , 
-
-  ```
-  MIN()
-  ```
-
-  。
-
-  SQL
-
-  ```
+  ```mysql
   SELECT Major, COUNT(SID) AS NumberOfStudents
   FROM Students
   GROUP BY Major
   HAVING COUNT(SID) > 30;
   ```
+  
+- 连接查询 `JOIN`:
 
-- 连接查询 `JOIN`
-
-  :
-
-  SQL
-
-  ```
+  ```mysql
   SELECT s.SName, c.CName
   FROM Students s
   JOIN Enrollments e ON s.SID = e.SID
   JOIN Courses c ON e.CID = c.CID;
   ```
+  
+- 子查询 (Subquery):
 
-- 子查询 (Subquery)
-
-  :
-
-  SQL
-
-  ```
+  ```mysql
   SELECT SName
   FROM Students
   WHERE SID IN (SELECT SID FROM Enrollments WHERE CID = 'CS101');
@@ -177,36 +119,24 @@ SQL 是在关系数据库上执行查询、数据操作和数据定义的标准�
 
 用于添加、删除和修改数据。
 
-- 插入 `INSERT`
+- 插入 `INSERT`:
 
-  :
-
-  SQL
-
-  ```
+  ```mysql
   INSERT INTO Students (SID, SName, Age, Major)
   VALUES ('123456789', '王五', 21, '物理学');
   ```
+  
+- 更新 `UPDATE`:
 
-- 更新 `UPDATE`
-
-  :
-
-  SQL
-
-  ```
+  ```mysql
   UPDATE Students
   SET Major = '电子工程'
   WHERE SName = '王五';
   ```
+  
+- 删除 `DELETE`:
 
-- 删除 `DELETE`
-
-  :
-
-  SQL
-
-  ```
+  ```mysql
   DELETE FROM Students
   WHERE SID = '123456789';
   ```
@@ -254,25 +184,20 @@ SQL 是在关系数据库上执行查询、数据操作和数据定义的标准�
 
   - **问题**: 脏读 (Dirty Read)、不可重复读 (Non-repeatable Read)、幻读 (Phantom Read)。
 
-  - 技术
-
-    :
+  - 技术:
 
     - **锁 (Locking)**: **共享锁 (S-lock)** 用于读，**排他锁 (X-lock)** 用于写。
     - **两段锁协议 (2PL)**: 事务分为**加锁阶段**和**解锁阶段**，一旦开始解锁就不能再加锁。
     - **时间戳排序 (Timestamp Ordering)**: 为每个事务分配一个唯一的时间戳。
     - **多版本并发控制 (MVCC)**: 为数据保留多个版本，读操作不加锁。
-
+  
 - **数据库恢复 (Recovery)**:
 
   - **故障类型**: 事务内部故障、系统故障、介质故障。
 
-  - 技术
-
-    :
+  - 技术:
 
     - **日志 (Log)**: 记录所有对数据库的更新操作。
     - **备份 (Backup)**: 定期创建数据库副本。
     - **检查点 (Checkpoint)**: 定期将内存中的数据写入磁盘，并记录一个检查点，可以缩短恢复时间。
 
-希望这份提纲能帮助你更好地复习数据库系统！祝你考试顺利！👍
