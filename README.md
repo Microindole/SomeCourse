@@ -1,6 +1,6 @@
 # 个人课程复习笔记 📝
 
-[![License](https://img.shields.io/badge/License-AGPL-3.0-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-AGPL3.0-blue.svg)](LICENSE)
 [![Courses](https://img.shields.io/badge/Courses-8-green.svg)](#课程目录)
 [![Language](https://img.shields.io/badge/Language-中文-red.svg)](#)
 
