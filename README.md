@@ -1,6 +1,11 @@
 # 个人课程复习笔记 📝
 
+[![License](https://img.shields.io/badge/License-AGPL3.0-blue.svg)](LICENSE)
+[![Courses](https://img.shields.io/badge/Courses-8-green.svg)](#课程目录)
+[![Language](https://img.shields.io/badge/Language-中文-red.svg)](#)
+
 > ⚠️ **个人学习笔记，仅供参考** - 这些是我个人整理的复习资料，带有很强的主观色彩和个人理解，可能存在错误或片面性。
+
 
 ## 📌 重要声明
 
