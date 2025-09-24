@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+    <link rel="stylesheet" type="text/css" href="../../css/miniproject.css">
+    <script src="https://kit.fontawesome.com/59c20db7cc.js" crossorigin="anonymous"></script>
+<!--    <script src="../../js/59c20db7cc.js" crossorigin="anonymous"></script>-->
+</head>
+<body>
+
+<!--<form action="login" method="post">-->
+<!--    <div th:if="${loginMsg!=null}">-->
+<!--        <p th:text="${loginMsg}"></p>-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <input type="text" name="username" id="username" placeholder="请输入用户名" autocomplete="off"> <br />-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <input type="password" name="password" id="password" placeholder="请输入密码" autocomplete="off"><br />-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <input type="submit" value="提交">-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <a href="registerForm">用户注册</a>-->
+<!--    </div>-->
+<!--</form>-->
+<div class="w">
+    <div class="user-content">
+        <div class="user-title">用户登录</div>
+        <form action="login" class="user-form" method="POST">
+                <div th:if="${loginMsg!=null}">
+                    <p class="error-msg" th:text="${loginMsg}"></p>
+                </div>
+            <div class="user-form-item">
+                <label for="username" class="user-form-label">
+                    <i class="fa-solid fa-user"></i>
+                </label>
+                <input type="text" class="user-form-input" name="username" id="username" placeholder="请输入用户名" autocomplete="off">
+            </div>
+            <div class="user-form-item">
+                <label for="password" class="user-form-label">
+                    <i class="fa-solid fa-lock"></i>
+                </label>
+                <input type="password" class="user-form-input" name="password" id="password" placeholder="请输入密码" autocomplete="off">
+            </div>
+            <div class="user-form-item">
+                <input type="submit" value="登录" class="user-form-submit">
+            </div>
+            <div class="user-form-link">
+                <a href="registerForm" class="link">用户注册</a>
+            </div>
+        </form>
+    </div>
+
+</div>
+</body>
+</html>

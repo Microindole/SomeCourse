@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    <bean id="account" class="org.csu.demo.domain.Account" scope="prototype" lazy-init="true">-->
+<!--        <property name="username" value="abc" />-->
+<!--        <property name="password" value="123" />-->
+<!--    </bean>-->
+
+<!--    <bean id="accountDao" class="org.csu.demo.dao.impl.AccountDaoImpl" lazy-init="true"/>-->
+
+<!--    <bean id="accountService" class="org.csu.demo.service.AccountService" lazy-init="true">-->
+<!--        <constructor-arg name="accountDao" ref="accountDao" />-->
+<!--    </bean>-->
+</beans>

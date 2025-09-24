@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户信息列表</title>
+    <link rel="stylesheet" type="text/css" href="../../css/miniproject.css">
+    <script src="https://kit.fontawesome.com/59c20db7cc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="w">
+    <div class="list-content">
+        <div class="list-title">用户信息列表</div>
+        <div class="list-error" th:if="${session.mainFormMsg!=null}">
+            <i class="fa-solid fa-circle-exclamation error-icon" ></i>
+            <p class="error-msg" th:text="${session.mainFormMsg}"></p>
+        </div>
+        <div class="list-table-content">
+            <table>
+                <tr class="head">
+                    <th>ID</th>
+                    <th>用户名</th>
+                    <th>密码</th>
+                    <th>邮箱</th>
+                    <th>年龄</th>
+                    <th>管理员</th>
+                    <th>操作</th>
+                </tr>
+                <tr th:each="user : ${session.userList}">
+                    <td th:text="${user.id}"></td>
+                    <td th:text="${user.username}"></td>
+                    <td th:text="${user.password}"></td>
+                    <td th:text="${user.email}"></td>
+                    <td th:text="${user.age}"></td>
+                    <td th:text="${user.isAdmin ? '是' : '否'}"></td>
+                    <td class="last">
+                        <a href="" class="link">修改</a>
+                        <a href="delete?id=${user.id}" class="link">删除</a>
+                    </td>
+                </tr>
+
+
+            </table>
+        </div>
+        <div class="list-link">
+            <a href="registerForm" class="link">新增用户</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
