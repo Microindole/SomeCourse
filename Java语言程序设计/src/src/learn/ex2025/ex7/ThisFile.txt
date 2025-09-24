@@ -1,0 +1,7 @@
+This is a line.
+Another line with more words.
+A third line.
+12345
+AaEeIiOoUu
+!@#$%^&*
+This is the second question of experiment 7.
